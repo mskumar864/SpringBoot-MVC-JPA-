@@ -23,6 +23,14 @@ Welcome to the SPring MVC
 
   
   <input type="submit">
+  </form>
+  
+  <form action="getUserByName" method="get">
+
+ Enter user name<input type="text" name="uname"/><br>
+
+  
+  <input type="submit">
 </form>
 </body>
 </html>

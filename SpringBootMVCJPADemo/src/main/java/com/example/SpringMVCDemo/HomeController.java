@@ -69,6 +69,8 @@ public class HomeController {
 		 */
 
 		//model.addAttribute("num3",user);
+		repo.save(user);
+		
 		
 		return "result";
 	}
@@ -93,6 +95,15 @@ public class HomeController {
 		return "showusers";
 	}
 	
+	@RequestMapping(value="/getUserByName",method=RequestMethod.GET)
+	public String getUserByName(@RequestParam String uname,Model M) {
+		System.out.println("heello");
+	//java.util.List<User> users=Arrays.asList(new User(10,"suresh"),new User(20,"test"));
+	
+	M.addAttribute("result",repo.findByUnameOrderByUidDesc(uname));
+	M.addAttribute("result",repo.find(uname));
+		return "showusers";
+	}
 	
 	/*
 	@RequestMapping("/addUser")
